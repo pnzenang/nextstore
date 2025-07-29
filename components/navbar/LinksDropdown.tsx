@@ -20,7 +20,7 @@ const LinksDropdown = () => {
       <DropdownMenuTrigger asChild>
         <Button variant='outline' className='flex gap-4 max-w-[100px]'>
           <SignedOut>
-            <FaAlignLeft className='w-10 h-10 ' />
+            <FaAlignLeft className='w-9 h-9 ' />
           </SignedOut>
           <SignedIn>
             <FaAlignLeft className='w-10 h-10 text-primary' />
