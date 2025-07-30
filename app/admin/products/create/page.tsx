@@ -9,7 +9,7 @@ import TextAreaInput from '@/components/form/TextAreaInput';
 import { createProductAction } from '@/utils/actions';
 import { faker } from '@faker-js/faker';
 
-export const CreateProductsPage = (formData: FormData) => {
+const CreateProductsPage = (formData: FormData) => {
   const name = faker.commerce.productName();
   const company = faker.company.name();
   const description = faker.lorem.paragraphs({ min: 10, max: 12 });
@@ -50,4 +50,4 @@ export const CreateProductsPage = (formData: FormData) => {
     </section>
   );
 };
-// export default CreateProductsPage;
+export default CreateProductsPage;
