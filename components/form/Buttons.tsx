@@ -1,6 +1,7 @@
 'use client';
 import { useFormStatus } from 'react-dom';
 import { IoReloadSharp } from 'react-icons/io5';
+import { IoReloadCircleOutline } from 'react-icons/io5';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 import { SignInButton } from '@clerk/nextjs';
@@ -29,7 +30,7 @@ const SubmitButton = ({
     >
       {pending ? (
         <>
-          <IoReloadSharp className='mr-2 h-4 w-4 animate-spin' />
+          <IoReloadCircleOutline className='mr-2 h-4 w-4 animate-spin' />
           Please wait...
         </>
       ) : (
