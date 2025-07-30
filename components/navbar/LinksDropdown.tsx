@@ -7,23 +7,25 @@ import {
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
 import { FaAlignLeft } from 'react-icons/fa6';
-import { LuCircleUser } from 'react-icons/lu';
 import { Button } from '../ui/button';
 import { links } from '@/utils/links';
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs';
 import SignOutLink from './SignOutLink';
 import UserIcon from './UserIcon';
+import { auth } from '@clerk/nextjs/server';
 
 const LinksDropdown = () => {
+  const { userId } = auth();
+  const isAdmin = userId === process.env.ADMIN_USER_ID;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline' className='flex gap-4 max-w-[100px]'>
+        <Button variant='outline' className='flex gap-4 max-w-[100px] '>
           <SignedOut>
-            <FaAlignLeft className='w-9 h-9 ' />
+            <FaAlignLeft className='w-5 h-5 ' />
           </SignedOut>
           <SignedIn>
-            <FaAlignLeft className='w-10 h-10 text-primary' />
+            <FaAlignLeft className='w-5 h-5 text-primary' />
           </SignedIn>
           <UserIcon />
         </Button>
@@ -44,6 +46,8 @@ const LinksDropdown = () => {
         </SignedOut>
         <SignedIn>
           {links.map((link) => {
+            if (link.label === 'dashboard' && !isAdmin) return null;
+
             return (
               <DropdownMenuItem key={link.href}>
                 <Link href={link.href} className='capitalize w-full'>

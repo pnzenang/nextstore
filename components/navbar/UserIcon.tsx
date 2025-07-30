@@ -4,10 +4,10 @@ const UserIcon = () => {
   return (
     <>
       <SignedOut>
-        <FaRegCircleUser className='w-10 h-10  rounded-full ' />
+        <FaRegCircleUser className='w-5 h-5  rounded-full ' />
       </SignedOut>
       <SignedIn>
-        <FaRegCircleUser className='w-10 h-10  rounded-full text-primary' />
+        <FaRegCircleUser className='w-5 h-5  rounded-full text-primary' />
       </SignedIn>
     </>
   );
