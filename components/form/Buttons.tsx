@@ -30,7 +30,7 @@ const SubmitButton = ({
     >
       {pending ? (
         <>
-          <IoReloadCircleOutline className='mr-2 h-4 w-4 animate-spin' />
+          <IoReloadCircleOutline className='mr-2 h-5 w-5 animate-spin' />
           Please wait...
         </>
       ) : (
