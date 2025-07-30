@@ -13,7 +13,7 @@ const CheckboxInput = ({
   defaultChecked = false,
 }: CheckboxInputProps) => {
   return (
-    <div className='flex items-center space-x-3'>
+    <div className='flex items-center space-x-2'>
       <Checkbox id={name} name={name} defaultChecked={defaultChecked} />
       <label
         htmlFor={name}
