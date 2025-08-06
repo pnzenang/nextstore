@@ -37,10 +37,9 @@ const AdminProductsPage = async () => {
             const { id: productId, name, company, price } = item;
             return (
               <TableRow>
-                <TableCell>
+                <TableCell key={price}>
                   <Link
                     href={`/products/${productId}`}
-                    key={productId}
                     className='underline text-muted-foreground tracking-wide capitalize'
                   >
                     {name}
