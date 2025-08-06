@@ -40,6 +40,7 @@ const AdminProductsPage = async () => {
                 <TableCell>
                   <Link
                     href={`/products/${productId}`}
+                    key={productId}
                     className='underline text-muted-foreground tracking-wide capitalize'
                   >
                     {name}
